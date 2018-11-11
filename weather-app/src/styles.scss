@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+
+    margin: 0px 0px 0px 0px;
+}
+
+
+header{
+
+    background-color: darkblue;
+    height: 32px;
+    
+    a{
+        vertical-align: middle;
+        padding: 16px 16px 16px 16px;
+        color: whitesmoke;
+        text-decoration: none;
+        font-weight: bold;
+    }
+}
