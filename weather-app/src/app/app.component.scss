@@ -1,7 +1,32 @@
 header{
-    height: 32px;
-    position:fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
+    position: relative;
 }
+
+nav {
+        position: absolute;
+        top: 0px;
+        left: -97%;
+        background: #DB473B;
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        z-index: 999;
+
+        -webkit-box-shadow: 7px 0px 5px 0px rgba(36,36,36,0.61);
+        -moz-box-shadow: 7px 0px 5px 0px rgba(36,36,36,0.61);
+        box-shadow: 7px 0px 5px 0px rgba(36,36,36,0.61);
+
+        span {
+            width: 40px;
+            height: 80px;
+            background: #DB473B;
+            border-radius: 15px;
+            position: absolute;
+            bottom: 20px;
+            right: -25px;
+            display: block;
+            -webkit-box-shadow: 7px 0px 5px 0px rgba(36,36,36,0.61);
+            -moz-box-shadow: 7px 0px 5px 0px rgba(36,36,36,0.61);
+            box-shadow: 7px 0px 5px 0px rgba(36,36,36,0.61);
+        }
+    }

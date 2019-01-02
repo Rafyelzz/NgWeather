@@ -3,22 +3,21 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body{
+body, html{
 
     margin: 0px 0px 0px 0px;
 }
 
-
-header{
-
-    background-color: darkblue;
-    height: 32px;
-    
-    a{
-        vertical-align: middle;
-        padding: 16px 16px 16px 16px;
-        color: whitesmoke;
-        text-decoration: none;
-        font-weight: bold;
-    }
+main {
+padding-top: 20px;
+padding-left: 30px;
+width:auto;
+height: 100vh;
+position:relative;
+background-image: url(/assets/bg1.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center center;
+background-attachment: fixed;
+color: white;
 }
