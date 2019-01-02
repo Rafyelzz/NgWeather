@@ -1,0 +1,24 @@
+<main>
+  <div class=container>
+
+    <div class=info>
+      <form ng-submit="saveChanges()">
+        <div class="form-group">          
+          <input type="text" placeholder="Where are you?" name="city" class="form-control" [(ngModel)]="city">
+        </div>
+          <button class="button" type="submit">Go</button>
+      </form> 
+      <div id="returnCity"></div>
+      <h3>Weather in {{location.city}} </h3>
+      <p>Temperature: {{weatherConditions.temp - 273.15 + "° Celsius"}}</p><img [src]="weatherConditions.iconCode">
+      <p>Condition is {{weatherConditions.condition}}</p>
+      <p>Sun will rise at {{weatherConditions.sunrise}}</p>
+      <p>Sun will set at {{weatherConditions.sunset}}</p>
+      <p>Therefore, we'll have {{weatherConditions.daylight}} hours of daylight</p>
+      <p>Humidity is {{weatherConditions.humidity}}%</p>
+      <p>Wind is {{weatherConditions.windSpeed}} km/h, direction {{weatherConditions.windDirection}} degrees</p>
+      <p>Visibility is {{weatherConditions.visibility}}, whatever that means</p>
+
+    </div>
+  </div>
+</main>
