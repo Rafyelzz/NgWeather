@@ -13,5 +13,19 @@ export class AppComponent {
 
 myFunction(){
       $("nav").toggleClass('drag-status');
+      $("nav span").toggleClass('drag-status2');
+      $("main").toggleClass('blur');
 } 
-}
+
+swipeFunction(){
+  // Bind the swipeHandler callback function to the swipe event on div.box
+  $( "nav" ).on( "swipe", swipeHandler );
+ 
+  // Callback function references the event target and adds the 'swipe' class to it
+  function swipeHandler( event ){
+      $("nav").toggleClass('drag-status');
+      $("nav span").toggleClass('drag-status2');
+      $("main").toggleClass('blur');
+  }
+};
+};

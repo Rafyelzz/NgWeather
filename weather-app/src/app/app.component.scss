@@ -11,7 +11,7 @@ nav {
         width: 100vw;
         height: 100vh;
         z-index: 999;
-        transition: all 1s;
+        transition: all .5s;
 
         -webkit-box-shadow: 7px 0px 5px 0px rgba(36,36,36,0.61);
         -moz-box-shadow: 7px 0px 5px 0px rgba(36,36,36,0.61);
@@ -30,10 +30,32 @@ nav {
             -moz-box-shadow: 7px 0px 5px 0px rgba(36,36,36,0.61);
             box-shadow: 7px 0px 5px 0px rgba(36,36,36,0.61);
             cursor: pointer;
+            transition: all .5s;
+        }
+
+        .drag-status2 {
+            background: RGBA(219,71,59,0);
+            -webkit-box-shadow: 7px 0px 5px 0px rgba(36,36,36,0);
+            -moz-box-shadow: 7px 0px 5px 0px rgba(36,36,36,0);
+            box-shadow: 7px 0px 5px 0px rgba(36,36,36,0);
+        }
+
+        ul {
+            padding: 30px 10px 20px 10px;
+
+            li {
+                padding: 10px 0px 10px 70px;
+
+                a {
+                    color: #fff;
+                    font-size: 18px;
+                }
+            }
         }
     }
 
     .drag-status {
         left: -8%;
-        transition: all 1s;
+        transition: all .5s;
+        background: RGBA(219,71,59,0.8);
     }
