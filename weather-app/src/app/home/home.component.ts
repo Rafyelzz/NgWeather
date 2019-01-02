@@ -56,12 +56,6 @@ export class HomeComponent implements OnInit {
       }
       
     });
-    
-      // $('#send').click(function(){
-      //   alert("button clicked");
-      //   var city = $('#city').val();
-      //   $('#returnCity).innerHTML = city
-      // })
 
   }
   saveChanges(){
@@ -70,6 +64,7 @@ export class HomeComponent implements OnInit {
     }
     localStorage.setItem('location',JSON.stringify(location));
     window.location.reload();
-  }
+  };
+  
 }
 

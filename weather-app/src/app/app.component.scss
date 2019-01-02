@@ -5,12 +5,13 @@ header{
 nav {
         position: absolute;
         top: 0px;
-        left: -97%;
+        left: -98%;
         background: #DB473B;
         display: block;
         width: 100vw;
         height: 100vh;
         z-index: 999;
+        transition: all 1s;
 
         -webkit-box-shadow: 7px 0px 5px 0px rgba(36,36,36,0.61);
         -moz-box-shadow: 7px 0px 5px 0px rgba(36,36,36,0.61);
@@ -28,5 +29,11 @@ nav {
             -webkit-box-shadow: 7px 0px 5px 0px rgba(36,36,36,0.61);
             -moz-box-shadow: 7px 0px 5px 0px rgba(36,36,36,0.61);
             box-shadow: 7px 0px 5px 0px rgba(36,36,36,0.61);
+            cursor: pointer;
         }
+    }
+
+    .drag-status {
+        left: -8%;
+        transition: all 1s;
     }
