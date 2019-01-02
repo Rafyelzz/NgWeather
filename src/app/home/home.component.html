@@ -2,11 +2,10 @@
   <div class=container>
 
     <div class=info>
-      <form ng-submit="saveChanges()">
+      <form (ngSubmit)="saveChanges()">
         <div class="form-group">          
           <input type="text" placeholder="Where are you?" name="city" class="form-control" [(ngModel)]="city">
         </div>
-          <button class="button" type="submit">Go</button>
       </form> 
       <div id="returnCity"></div>
       <h3>Weather in {{location.city}} </h3>
