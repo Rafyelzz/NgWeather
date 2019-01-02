@@ -1,18 +1,25 @@
+<section class="main">
+  <div class=container>
 
-<div class=container>
+    <div class=info>
+      <form>
+        <div class="form-group">
+          <label>Search Location:</label>
+          <input type="text" name="city" class="form-control" [(ngModel)]="city">
+        </div>
+          <button class="button" (click)="saveChanges()">Go</button>
+      </form> 
+      <div id="returnCity"></div>
+      <h3>Weather in {{location.city}} </h3>
+      <p>Temperature: {{weatherConditions.temp - 273.15 + "° Celsius"}}</p><img [src]="weatherConditions.iconCode">
+      <p>Condition is {{weatherConditions.condition}}</p>
+      <p>Sun will rise at {{weatherConditions.sunrise}}</p>
+      <p>Sun will set at {{weatherConditions.sunset}}</p>
+      <p>Therefore, we'll have {{weatherConditions.daylight}} hours of daylight</p>
+      <p>Humidity is {{weatherConditions.humidity}}%</p>
+      <p>Wind is {{weatherConditions.windSpeed}} km/h, direction {{weatherConditions.windDirection}} degrees</p>
+      <p>Visibility is {{weatherConditions.visibility}}, whatever that means</p>
 
-  <div class=info>
-    <p>Search Location:</p><input id="city"><button id="send">Go</button> 
-    <div id="returnCity"></div>
-    <h3>Weather in {{location.city}} </h3>
-    <p>Temperature: {{weather.main.temp - 273.15 + "° Celsius"}}</p>
-    <p>Condition is {{weatherConditions.condition}}</p>
-    <p>Sun will rise at {{weatherConditions.sunrise}}</p>
-    <p>Sun will set at {{weatherConditions.sunset}}</p>
-    <p>Therefore, we'll have {{weatherConditions.daylight}} hours of daylight</p>
-    <p>Humidity is {{weatherConditions.humidity}}%</p>
-    <p>Wind is {{weatherConditions.windSpeed}} km/h, direction {{weatherConditions.windDirection}} degrees</p>
-    <p>Visibility is {{weatherConditions.visibility}}, whatever that means</p>
-    
+    </div>
   </div>
-</div>
+</section>

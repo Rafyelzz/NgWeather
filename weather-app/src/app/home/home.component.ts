@@ -10,11 +10,13 @@ import * as moment from 'moment';
 })
 export class HomeComponent implements OnInit {
 
+  city:string;
   location={
     city: 'Budapest',
     code:'HU',
   };
 
+  
   weather: any;
   weatherConditions: any;
   value: any;
@@ -40,7 +42,7 @@ export class HomeComponent implements OnInit {
       console.log(this.weather);
       this.weatherConditions={
         condition: this.weather.weather[0].description,
-        temp:'main_temp',
+        temp: this.weather.main.temp,
         pressure: this.weather.main.pressure,
         humidity: this.weather.main.humidity,
         currentDate: moment.unix(this.weather.dt).format("DD-MM-YYYY HH:mm:ss"),
@@ -50,6 +52,7 @@ export class HomeComponent implements OnInit {
         visibility: this.weather.visibility,
         windSpeed: this.weather.wind.speed,
         windDirection: this.weather.wind.deg,
+        iconCode: "http://openweathermap.org/img/w/" + this.weather.weather[0].icon + ".png", 
       }
       
     });
@@ -61,6 +64,12 @@ export class HomeComponent implements OnInit {
       // })
 
   }
-  
+  saveChanges(){
+    let location={
+      city:this.city,
+    }
+    localStorage.setItem('location',JSON.stringify(location));
+    window.location.reload();
+  }
 }
 

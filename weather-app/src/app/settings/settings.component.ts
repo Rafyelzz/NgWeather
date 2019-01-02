@@ -8,7 +8,7 @@ import { Router} from '@angular/router';
 })
 export class SettingsComponent implements OnInit {
 
-  city:string;
+  city: string;
   code: string; 
 
   constructor(private route:Router) { }
