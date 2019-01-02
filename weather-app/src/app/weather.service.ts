@@ -20,4 +20,8 @@ export class WeatherService {
     .pipe(map(res => res.json()));
 
   }
+
+  getWeatherLatLong(lat,long){
+    return this.http.get(this.url+'lat='+lat+'&lon='+long+'&APPID='+this.apiKey)
+  }
 } 

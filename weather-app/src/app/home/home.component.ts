@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../weather.service';
 import * as moment from 'moment';
+import { longStackSupport } from 'q';
 
 
 @Component({
@@ -9,6 +10,7 @@ import * as moment from 'moment';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+
 
   city:string;
   location={
@@ -20,12 +22,26 @@ export class HomeComponent implements OnInit {
   weather: any;
   weatherConditions: any;
   value: any;
+  lat: any;
+  lon: any;
 
   constructor(private _weatherService:WeatherService) {
 
    }
 
   ngOnInit() {
+
+
+    // if (navigator.geolocation) {
+    //   navigator.geolocation.getCurrentPosition((position) => {
+    //     this.lat=position.coord.lat;
+    //     this.lon = position.coord.lon;
+    //     console.log(this.lon);
+    //   });
+    // } else {
+    //   alert("Geolocation is not supported by this browser.");
+    // }
+
 
     this.value = localStorage.getItem('location');
     if (this.value!= null){
