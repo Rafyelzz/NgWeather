@@ -17,13 +17,16 @@ myFunction(){
       $("main").toggleClass('blur');
 } 
 
-$(function(){
-  // Bind the swipeHandler callback function to the swipe event on div.box
-  $(document.documentElement).on( "swipe", swipeHandler );
- 
-  // Callback function references the event target and adds the 'swipe' class to it
-  function swipeHandler( event ){
-    $( "nav" ).addClass( "drag-status" );
-  }
+swipeFunction (){
+var swipeElement = document.getElementById('nav');
+
+// create a simple instance
+// by default, it only adds horizontal recognizers
+var mc = new Hammer(swipeElement);
+
+// listen to events...
+mc.on("panleft panright tap press", function(ev) {
+    console.log('swipe');
 });
+};
 };
