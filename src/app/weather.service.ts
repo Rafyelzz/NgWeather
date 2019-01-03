@@ -21,7 +21,7 @@ export class WeatherService {
 
   }
 
-  getWeatherLatLong(lat,long){
+  getWeatherGPS(lat,long){
     return this.http.get(this.url+'lat='+lat+'&lon='+long+'&APPID='+this.apiKey)
   }
 } 
