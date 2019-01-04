@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Thasadith:400,700');
+
+form{
+    input, button{
+        border: 0px;
+        padding: 15px 10px;
+        height: 50px;
+        text-align: center;
+    }
+
+    input:focus {
+        outline: none;
+        outline-width: 0px;
+    }
+
+    *:focus {
+        outline: none;
+    }
+}
+
+.output {
+    padding-top: 65vh;
+    padding-bottom: 150px;
+
+    .teaser {
+        height: 35vh;
+        display: block;
+        padding-left: 20px;
+    }
+
+    h3 {
+    color: #fff;
+    font-size: 55px;
+    font-family: 'Thasadith', sans-serif;
+    font-weight: 400;
+    width: 100%;
+    text-align: right;
+
+        &:first-letter {
+            text-transform: uppercase;
+        }
+    }
+
+    .result {
+        width: 100%;
+        text-align: right;
+    }
+
+    .temperature {
+    text-align: right;
+    }
+
+    .condition {
+        width: 100%;
+        position: relative;
+        text-align: right;
+        margin-bottom: 40px;
+        border-bottom: 1px solid #DB473B;
+
+        img {
+            width: 100%;
+        }
+
+        h2 {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            color: rgba(255,255,255,0.1);
+            font-family: 'Thasadith', sans-serif;
+            font-weight: 400;
+            font-size: 70px;
+
+            z-index: 20;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            display: block;
+            background: radial-gradient(circle at center, rgba(1, 14, 20, 0) 30%, rgba(0,2,2,1) 70%), rgba(0,2,2,0.5);
+        }
+    }
+}
