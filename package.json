@@ -23,6 +23,7 @@
     "@types/hammerjs": "^2.0.36",
     "@types/jquery": "^3.3.22",
     "core-js": "^2.5.4",
+    "firebase": "^5.7.2",
     "hammerjs": "^2.0.8",
     "jquery": "^3.3.1",
     "jquery-mobile": "^1.5.0-alpha.1",
