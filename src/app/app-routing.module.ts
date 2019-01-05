@@ -4,12 +4,9 @@ import { SettingsComponent } from './settings/settings.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path:'settings',component:SettingsComponent},
-  { path:'home',component:HomeComponent},
-  { path: '',
-  redirectTo: '/home',
-  pathMatch: 'full'
-},
+  { path:'settings',component:SettingsComponent, data: { title: 'Settings'} },
+  { path:'home',component:HomeComponent, data: { title: 'Home'} },
+  { path: '',  redirectTo: '/home',  pathMatch: 'full', data: {title: 'WeatherApp'}}, 
 ];
 
 @NgModule({
