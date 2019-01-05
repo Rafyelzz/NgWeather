@@ -1,4 +1,4 @@
-<main>
+<main ng-init="heightSet()">
   <div class=container>
 
     <div class=info>
@@ -10,19 +10,31 @@
       <div class="output">
       <div class="teaser">
         <h3 class="city">{{location.city}}</h3>
-        <p class="result temperature">Temperature: {{weatherConditions.temp - 273.15 + "° Celsius"}}</p>
+        <p class="result temperature">Temperature: <strong>{{weatherConditions.temp - 273.15 + "°" }}</strong> Celsius</p>
       </div>
       <div class="condition">
           <img src="../assets/conditions/rain.jpg"/>
           <h2>Drizzle</h2>
       </div>
-      <p class="result">Condition is {{weatherConditions.condition}}</p>
-      <p class="result">Sun will rise at {{weatherConditions.sunrise}}</p>
-      <p class="result">Sun will set at {{weatherConditions.sunset}}</p>
-      <p class="result">Therefore, we'll have {{weatherConditions.daylight}} hours of daylight</p>
-      <p class="result">Humidity is {{weatherConditions.humidity}}%</p>
-      <p class="result">Wind is {{weatherConditions.windSpeed}} km/h, direction {{weatherConditions.windDirection}} degrees</p>
-      <p class="result">Visibility is {{weatherConditions.visibility}}, whatever that means</p>
+
+      <div class="data-wrapper">
+        <div class="data-slide-wrapper">
+          <div class="data-slide">
+            <p class="result">Condition is <strong>{{weatherConditions.condition}}</strong></p>
+            <p class="result">Sun will rise at <strong>{{weatherConditions.sunrise}}</strong></p>
+            <p class="result">Sun will set at <strong>{{weatherConditions.sunset}}</strong></p>
+            <p class="result">Therefore, we'll have <strong>{{weatherConditions.daylight}}</strong> hours of daylight</p>
+            <p class="result">Humidity is <strong>{{weatherConditions.humidity}}%</strong></p>
+            <p class="result">Wind is <strong>{{weatherConditions.windSpeed}}</strong> km/h, direction <strong>{{weatherConditions.windDirection}}</strong> degrees</p>
+            <p class="result">Visibility is <strong>{{weatherConditions.visibility}}</strong>, whatever that means</p>
+          </div>
+        
+
+            <div class="data-slide">
+              <p>test</p>
+            </div>
+          </div>
+      </div>
     </div>
     </div>
   </div>

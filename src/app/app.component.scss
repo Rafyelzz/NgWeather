@@ -12,6 +12,7 @@ nav {
         height: 100vh;
         z-index: 999;
         transition: all .5s;
+        padding: 30px;
 
         -webkit-box-shadow: 7px 0px 5px 0px rgba(36,36,36,0.61);
         -moz-box-shadow: 7px 0px 5px 0px rgba(36,36,36,0.61);
@@ -32,6 +33,7 @@ nav {
             cursor: pointer;
             opacity: 1;
             transition: all .5s;
+            z-index: 99;
         }
 
         .drag-status2 {
@@ -42,14 +44,40 @@ nav {
         }
 
         ul {
-            padding: 30px 10px 20px 10px;
+            padding: 20px 10px 0px 0px;
+            list-style: none;
 
             li {
-                padding: 10px 0px 10px 70px;
+                padding: 10px 0px 10px 30px;
 
                 a {
                     color: #fff;
                     font-size: 18px;
+                }
+            }
+        }
+
+        .places {
+            position: absolute;
+            list-style: none;
+            bottom: 20px;
+            left: 30px;
+            border-top: 1px solid #000202;
+            padding-top: 30px;
+            width: 88%;
+
+            li {
+                width: 100%;
+                
+                a {
+                    color: #000202;
+                    transition: all .3s;
+                    display: block;
+                    width: 100%;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
                 }
             }
         }

@@ -44,6 +44,10 @@ form{
     .result {
         width: 100%;
         text-align: right;
+
+        strong {
+            color: #DB473B;
+        }
     }
 
     .temperature {
@@ -85,4 +89,22 @@ form{
             background: radial-gradient(circle at center, rgba(1, 14, 20, 0) 30%, rgba(0,2,2,1) 70%), rgba(0,2,2,0.5);
         }
     }
+
+    .data-wrapper {
+        width: 100%;
+        overflow-x: scroll;
+
+
+        .data-slide-wrapper {
+            width: 300%;
+            overflow-x: auto;
+        }
+
+        .data-slide {
+            width: calc(33.33%);
+            float: left;
+            padding-left: 35px;
+        }
+    }
+
 }

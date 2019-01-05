@@ -101,6 +101,11 @@ export class HomeComponent implements OnInit {
     localStorage.setItem('location',JSON.stringify(location));
     window.location.reload();
   };
+
+  heightSet(){
+    var viewPortHeight = $(window).height();
+    $('main').css("height", viewPortHeight);
+  };
   
 }
 

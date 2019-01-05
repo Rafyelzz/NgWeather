@@ -57,5 +57,6 @@ var mc = new Hammer(swipeElement);
 mc.on("panleft panright tap press", function(ev) {
     console.log('swipe');
 });
+
 };
 };
