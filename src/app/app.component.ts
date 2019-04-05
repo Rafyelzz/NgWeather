@@ -13,6 +13,7 @@ import { filter, map, mergeMap } from 'rxjs/operators';
 
 export class AppComponent {
   title = 'weather-app';
+  geolocationPosition: Position;
   
   constructor(
     private router: Router,
@@ -21,6 +22,30 @@ export class AppComponent {
   ) {}
 
   ngOnInit() {
+    
+    // if (window.navigator && window.navigator.geolocation) {
+    //   window.navigator.geolocation.getCurrentPosition(
+    //       position => {
+    //           this.geolocationPosition = position,
+    //               console.log(position.coords.latitude)
+    //       },
+    //       error => {
+    //           switch (error.code) {
+    //               case 1:
+    //                   console.log('Permission Denied');
+    //                   break;
+    //               case 2:
+    //                   console.log('Position Unavailable');
+    //                   break;
+    //               case 3:
+    //                   console.log('Timeout');
+    //                   break;
+    //           }
+    //       }
+    //   );
+    // };
+
+
     this.router.events
       .pipe(
         filter(event => event instanceof NavigationEnd),
@@ -38,7 +63,6 @@ export class AppComponent {
       )
       .subscribe((event) => this.titleService.setTitle(event['title']));
   }
- 
   
 myFunction(){
       $("nav").toggleClass('drag-status');

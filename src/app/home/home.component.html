@@ -1,26 +1,25 @@
 <main ng-init="heightSet()">
   <div class=container>
-
     <div class=info>
+      <div id="location_search_bar">
       <form (ngSubmit)="saveChanges()">
         <div class="form-group">          
           <input type="text" placeholder="Where are you?" name="city" class="form-control" [(ngModel)]="city">
         </div>
       </form> 
+      <button id="locationbutton" (click)="getGPSLocation()"></button>
+    </div>
+          
       <div class="output">
       <div class="teaser">
         <h3 class="city">{{location.city}}</h3>
-        <p class="result temperature">Temperature: <strong>{{weatherConditions.temp - 273.15 + "°" }}</strong> Celsius</p>
+        <p class="result temperature">Temperature: <strong>{{weatherConditions.temp + "°" }}</strong> Celsius</p>
+        
       </div>
-      <div class="condition">
-          <img src="../assets/conditions/rain.jpg"/>
-          <h2>Drizzle</h2>
-      </div>
-
       <div class="data-wrapper">
-        <div class="data-slide-wrapper">
-          <div class="data-slide">
-            <p class="result">Condition is <strong>{{weatherConditions.condition}}</strong></p>
+        <!-- <div class="data-slide-wrapper">
+          <div class="data-slide"> -->
+            <p class="result">Condition is <strong>{{weatherConditions.condition}}</strong> <img src="{{weatherConditions.iconCode}}"></p>
             <p class="result">Sun will rise at <strong>{{weatherConditions.sunrise}}</strong></p>
             <p class="result">Sun will set at <strong>{{weatherConditions.sunset}}</strong></p>
             <p class="result">Therefore, we'll have <strong>{{weatherConditions.daylight}}</strong> hours of daylight</p>
@@ -28,12 +27,11 @@
             <p class="result">Wind is <strong>{{weatherConditions.windSpeed}}</strong> km/h, direction <strong>{{weatherConditions.windDirection}}</strong> degrees</p>
             <p class="result">Visibility is <strong>{{weatherConditions.visibility}}</strong>, whatever that means</p>
           </div>
-        
 
             <div class="data-slide">
-              <p>test</p>
-            </div>
-          </div>
+
+            <!-- </div>
+          </div> -->
       </div>
     </div>
     </div>

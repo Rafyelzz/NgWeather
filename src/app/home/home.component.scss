@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Thasadith:400,700');
 
 form{
+      
     input, button{
         border: 0px;
         padding: 15px 10px;
-        height: 50px;
+        height: 48px;
         text-align: center;
     }
 
@@ -17,6 +18,26 @@ form{
         outline: none;
     }
 }
+
+#location_search_bar{
+    position: relative;
+    padding:0;
+    margin:0;
+}
+
+#locationbutton{
+    position:absolute;
+    bottom:8px;
+    left:8px;
+    width:32px;
+    height:32px;
+    background-image: url(http://cdn.onlinewebfonts.com/svg/img_509353.png);
+    background-size: 32px 32px;
+
+    border: none;
+    cursor: pointer;
+}
+
 
 .output {
     padding-top: 65vh;

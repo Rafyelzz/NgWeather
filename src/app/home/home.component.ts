@@ -21,44 +21,33 @@ export class HomeComponent implements OnInit {
   weather: any;
   weatherConditions: any;
   value: any;
-  lat: any;
-  lon: any;
+  lat = 0;
+  lon = 0;
+  geolocationPosition: Position;
 
   constructor(private _weatherService:WeatherService) {
 
    }
 
   ngOnInit() {
- 
-
 
     this.value = localStorage.getItem('location');
     if (this.value!= null){
       this.location=JSON.parse(this.value);
     }else(
         this.location={
-          city: 'Budapest',
+          city:'Budapest',
           code:'HU',
         }
       )
+      
 
-      // if (navigator.geolocation) {
-      //   navigator.geolocation.getCurrentPosition(displayLocationInfo);
-      // }
-      
-      // function displayLocationInfo(position) {
-      //   const lon = position.coords.longitude;
-      //   const lat = position.coords.latitude;
-      
-      //   console.log(`longitude: ${ lon } | latitude: ${ lat }`);
-      // }
-      
     this._weatherService.getWeather(this.location.city,this.location.code).subscribe((response)=>{
       this.weather=response;
       console.log(this.weather); // to remove in the future
       this.weatherConditions={
         condition: this.weather.weather[0].description,
-        temp: this.weather.main.temp,
+        temp: (this.weather.main.temp - 273.15).toFixed(1),
         pressure: this.weather.main.pressure,
         humidity: this.weather.main.humidity,
         currentDate: moment.unix(this.weather.dt).format("DD-MM-YYYY HH:mm:ss"),
@@ -70,8 +59,9 @@ export class HomeComponent implements OnInit {
         windDirection: this.weather.wind.deg,
         iconCode: "http://openweathermap.org/img/w/" + this.weather.weather[0].icon + ".png", 
       }
-      
+
     }); 
+
     // this._weatherService.getWeatherGPS(this.lat,this.lon).subscribe((response)=>{
     //     this.weather=response;
     //     console.log(this.weather); // to remove in the future
@@ -94,6 +84,7 @@ export class HomeComponent implements OnInit {
     
 
   }
+
   saveChanges(){
     let location={
       city:this.city,
@@ -101,11 +92,29 @@ export class HomeComponent implements OnInit {
     localStorage.setItem('location',JSON.stringify(location));
     window.location.reload();
   };
-
-  heightSet(){
-    var viewPortHeight = $(window).height();
-    $('main').css("height", viewPortHeight);
-  };
   
-}
-
+  getGPSLocation(){
+     
+    if (window.navigator && window.navigator.geolocation) {
+      window.navigator.geolocation.getCurrentPosition(
+          position => {
+              this.geolocationPosition = position,
+                  this._weatherService.getWeatherGPS(position.coords.latitude, position.coords.longitude).subscribe((response)=>{
+                    this.weather=response;
+                    console.log(this.weather); // to remove in the future
+                  console.log(position.coords.latitude);
+                  console.log(position.coords.longitude);
+                  
+          
+          error => {
+              switch (error.code) {
+                  case 1:
+                      console.log('Permission Denied');
+                      break;
+                  case 2:
+                      console.log('Position Unavailable');
+                      break;
+                  case 3:
+                      console.log('Timeout');
+                      break;
+              }}})})}}}
