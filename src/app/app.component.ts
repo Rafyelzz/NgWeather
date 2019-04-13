@@ -12,7 +12,7 @@ import { filter, map, mergeMap } from 'rxjs/operators';
 })
 
 export class AppComponent {
-  title = 'weather-app';
+  title = 'Super Weather App';
   geolocationPosition: Position;
   
   constructor(

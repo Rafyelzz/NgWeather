@@ -33,11 +33,14 @@ form{
     height:32px;
     background-image: url(http://cdn.onlinewebfonts.com/svg/img_509353.png);
     background-size: 32px 32px;
-
+    opacity: 0.4;
     border: none;
     cursor: pointer;
+   
 }
-
+#locationbutton:hover{
+    opacity:1;
+}
 
 .output {
     padding-top: 65vh;

@@ -1,16 +1,45 @@
-<p>
-  Enter city and code please
-</p>
+<main ng-init="heightSet()">
+    <div class=container>
+        <p>Settings</p>
+      <div class=info>
+        <form>
+          <div class="form-group">
+            <label>City</label>
+            <input type="text" name="city" class="form-control" [(ngModel)]="city">
 
-<form>
+            <label>Code</label>
+            <input type="text" name="code" class="form-control" [(ngModel)]="code">
+            <label>Units</label>
+            <br>
+            <span>Metric</span>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <span>Imperial</span>
+          </div>
+          <!-- <switch name="yesNo" ng-model="yesNo" on="lorem" off="ipsum" class="wide"></switch> -->
+            <button class="button" (click)="saveSettings()">Save</button>
+        </form> 
 
-  <div class="form-group">
-    <label>City</label>
-    <input type="text" name="city" class="form-control" [(ngModel)]="city">
-
-    <label>Code</label>
-    <input type="text" name="code" class="form-control" [(ngModel)]="code">
+        <form role="form">
+          <div class="form-group">
+        
+            <div *ngFor="let key of settingsKeys">
+              <label>{{key}}</label><br>	  
+              <label *ngFor="let value of settingsValues[key]"
+                      class="radio-inline">
+                <input type="radio"
+                      (click)="saveSetting(key, value)"
+                      [(ngModel)]="currentSettings[key]"
+                      name="{{key}}"
+                      value="{{value}}">
+                      {{value}}
+              </label>
+            </div>
+      
+          </div>
+      </form>
+    </div>
   </div>
-    <button class="button" (click)="saveChanges()">Save City</button>
-
-</form> 
+</main>
